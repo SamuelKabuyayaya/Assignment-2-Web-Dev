@@ -1,0 +1,54 @@
+{
+    "skills":[
+        {
+            "id": "1",
+            "src": "/img/CSharp Logo.png",
+            "title": "C#",
+            "description": "I have a strong foundation in C# programming, which allows me to create console applications and Windows Forms projects. Through my coursework and practice, I’ve become comfortable with the structure of C# and applying it in small, functional programs."
+        },
+        {
+            "id": "2",
+            "src": "/img/JavaScript.png",
+            "title": "JavaScript",
+            "description": "I have developed a good knowledge of JavaScript, mainly focusing on making console programs and experimenting with basic logic. JavaScript has given me the opportunity to understand how programming works in a web environment. I really enjoy using it daily."
+        },
+        {
+            "id": "3",
+            "src": "/img/Python Logo.png",
+            "title": "Python",
+            "description": "I also have solid knowledge of Python, using it to write console-based programs and explore problem-solving. Python’s simplicity has allowed me to quickly test new concepts and practice programming logic. Python is a very good language for machine learning."
+        },
+        {
+            "id": "4",
+            "src": "/img/Blender Logo.png",
+            "title": "3D Modelling",
+            "description": "I have spent over 70 hours using Blender, where I’ve learned the fundamentals of 3D modeling. My free time projects include creating simple 3D shapes, objects, and experimenting with textures. I love exploring this field and making 3D characters and rig them."
+        }
+    ],
+    "projects":[
+        {
+            "id": "1",
+            "src": "/img/Project1.png",
+            "title": "Player Records Tracker",
+            "description": "This project was developed as part of COMP 228: Java Programming (Lab #1). The goal of this lab was to practice creating and working with Java classes, variables, methods, and constructors in the Java SE Platform. The application is a simple Java console program for keeping track of player records and displaying stored information.",
+            "link": "View in Github",
+            "githubLink": "https://github.com/SamuelKabuyayaya/COMP228_Lab1"
+        },
+        {
+            "id": "2",
+            "src": "/img/Project2.png",
+            "title": "Course Feedback Form",
+            "description": "This project was developed for COMP125-401: Client-Side Web Development. The assignment required building a course evaluation form using HTML, with inputs for course details, instructor feedback, ratings, and general comments. It demonstrates my skills in structuring content, working with forms, and applying external CSS styles.",
+            "link": "View in Github",
+            "githubLink": "https://github.com/SamuelKabuyayaya/Assignment-4-WEB-Interface"
+        },
+        {
+            "id": "3",
+            "src": "/img/Project3.png",
+            "title": "Java Projects Archive",
+            "description": "This project is a collection of Java programs I created as a high school student in 2022–2023. The focus of these projects was to practice the fundamentals of programming, such as classes, methods, and logic. They represent the beginning of my journey in Computer Science at St. Stephen Catholic School Bowmanville.",
+            "link": "View in Github",
+            "githubLink": "https://github.com/SamuelKabuyayaya/Projects-done-in-Java-during-2022-2023-School-Year"
+        }
+    ]
+}

@@ -1,0 +1,733 @@
+/* Global CSS that I am making with the help of YT tutorial. Someone kill me*/
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+/*Custom variables that I  used across the entire site for colors and whatever*/
+:root {
+    --primary: #337bff;
+    --heading-color: #282938;
+    --bg-shade: #f5fcff;
+    --github: #f31919;
+    --darkblue: #1c1e53;
+    --black: #000000;
+    --white: #ffffff; 
+}
+
+/*Button styling*/
+.btn{
+    font-family: "Roboto";
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    transition: background-color 0.5s;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -ms-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+}
+
+/*Button with transparent bg and coloured border*/
+.btn-outline-primary{
+    color: var(--primary);
+    background-color: var(--white);
+    border: 1px solid var(--primary);
+}
+/*Hover effect for outline button*/
+.btn-outline-primary:hover{
+    color: var(--white);
+    background-color: var(--primary);
+}
+/*Button with filled bg*/
+.btn-primary{
+    color: var(--white);
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+}
+/*Hover effect for filled button*/
+.btn-primary:hover{
+    color: var(--primary);
+    background-color: var(--white);
+}
+/*Specific style for my Github button*/
+.btn-github{
+    color: var(--white);
+    background-color: var(--github);
+    border: 1px solid var(--github);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.95);
+    gap: 16px;
+}
+/*Hover effect for Github button*/
+.btn-github:hover{
+    color: var(--github);
+    background-color: var(--white);
+}
+
+.btn--resume--download{
+    color: var(--white);
+    background-color: var(--github);
+    border: 1px solid var(--github);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.95);
+    gap: 16px;
+}
+
+.btn--resume--download:hover{
+    color: var(--github);
+    background-color: var(--white);
+}
+
+
+/*Global Section CSS Ends here*/
+
+/*Heading 1*/
+h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 67px;
+}
+
+/*Heading 2*/
+h2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 58px;
+}
+
+/*Heading 3*/
+h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+}
+
+/* Paragraphs text large, medium and small*/
+/*Body 1*/
+.text-lg {
+    color: var(--darkblue);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+/*Body 2*/
+.text-md {
+    color: var(--darkblue);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+/*Body 3*/
+.text-sm{
+    color: var(--black);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+/*Section Titles*/
+/*Skills & About Me*/
+.section--title {
+    color: var(--heading-color);
+    font-size: 21px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/*Portfolio, Testimonial & Contact Me*/
+.sub--title{
+    color: var(--heading-color);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+/**Section Titles End Here*/
+
+
+/*!!!!!!!!!!NAVIGATION BAR STARTS HERE!!!!!!!!!!*/
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 85.333px;
+    background: var(--white);
+    box-shadow: 0px 5.333px 80px 0 rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.navbar--items > ul{
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 42px;
+    text-decoration: none;
+}
+
+
+.navbar--content {
+    color: var(--darkblue);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.navbar--active--content{
+    color: var(--primary);
+}
+
+/*!!!!!!!!!!NAVIGATION BAR ENDS HERE!!!!!!!!!!*/
+
+/*!!!!!!!HERO SECTION STYLING STARTS HERE!!!!!!!!*/
+/*Intro section on HeroSection*/
+.hero--section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 133.333px 85.33px 133.333px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    background-color: var(--bg-shade);
+}
+
+/*Smaller spacing for content box inside hero section for mobile*/
+.hero--section--content-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+/*Content box inside hero section(buttons and text on the left)*/
+.hero--section--content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 21.333px;
+}
+
+/*Button spacing inside hero section*/
+.hero--section--content--box > button {
+    margin-top: 40px;
+}
+
+/*Headline title inside hero section*/
+.hero--section--title{
+    color: var(--heading-color);
+    font-size: 74.667px;
+    font-weight: 700;
+    line-height: 90px;
+    align-self: stretch;
+}
+
+/*Colour for primary text inside hero section(rn its blue but might change for centennial colour scheme later on. We will see)*/
+.hero--section--title--color{
+    color:var(--primary);
+}
+
+/*Hero section description text*/
+.hero--section--description{
+    color: var(--darkblue);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    margin-bottom: 40px;
+}
+
+/*Hero image container*/
+.hero--section--img{
+    display: flex;
+}
+
+/*Hero image sizing*/
+.hero--section--img > img{
+    width: 100%;
+    height: 100%;
+}
+
+/*!!!!!!!!!!HERO SECTION ENDS HERE!!!!!!!!!!*/
+
+/*!!!!!!!!SKILLS SECTION STYLING STARTS HERE!!!!!!!!!!!*/
+
+.skills--section{
+    display: flex;
+    padding: 149.33px 85.33px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.skills--section--heading{
+    color: var(--heading-color);
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 77px;
+}
+
+.skills--section--subtitle{
+    color: var(--heading-color);
+    font-size: 21px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    display: flex;
+    align-items: flex-start;
+}
+
+.skills--section--container{
+    display: grid;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 42.6px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.skills--section--card{
+    display: flex;
+    padding: 32px;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    flex: 1 0 0;
+    border-radius: 10.6px;
+    background: var(--bg-shade);
+    min-height: 250px;
+}
+
+.skills--section--card:hover{
+    border-bottom: 4px solid var(--primary);
+}
+
+.skills--section--card:hover .skills--section--description{
+    border-bottom: var(--darkblue);
+}
+
+.skills--section--img{
+    display: flex;
+    padding: 13.3px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10.6px;
+    background: #fff;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
+}
+
+.skills--section--card--content{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 32px;
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+}
+
+.skills--section--title{
+    color: var(--heading-color);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 45px;
+}
+
+.skills--section--description{
+    color: var(--black);
+    font-size: 21.3px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+}
+/*!!!!!!!!!!SKILLS SECTION ENDS HERE!!!!!!!!!!*/
+
+/*!!!!!!!!!!ABOUT ME SECTION STARTS HERE!!!!!!!!!!*/
+.about--section{
+    display: grid;
+    padding: 133.3px 85.3px;
+    align-items: center;
+    gap: 114.px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.about-section--heading{
+    color: var(--heading-color);
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 77px;
+}
+
+.aboutsection--img > img {
+    width: 100%;
+    height: 100%;
+}
+/*!!!!!!!!!!ABOUT ME SECTION ENDS HERE!!!!!!!!!!*/
+
+/*!!!!!!!!!!MY PROJECTS SECTION STARTS HERE!!!!!!!!!!*/
+.projects--section{
+    display: flex;
+    padding: 112px 85px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+.projects--container-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.projects--section--heading{
+    color: var(--heading-color);
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 77px;
+}
+
+.projects--container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 21.3px;
+}
+
+.projects--section--container{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 42px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.projects--section--img{
+    border: 2px solid cvar(--primary);
+    border-radius: 12px;
+    padding: 8px;
+    background: #f9f9f9;
+    width: 80%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projects--section--img > img{
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+.projects--section--card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    flex: 1 0 300px;
+    background: #fff;
+    box-shadow: 0 0 32 0 rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.projects--section--card--content{
+    display: flex;
+    padding: 32px;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+    border: 1.5px solid var(--primary);
+    border-radius: 12px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+    width: 80%;
+}
+
+.projects--section--title{
+    color: var(--heading-color)
+}
+
+.projects--section--card:hover path{
+    stroke: #006b6a;
+}
+
+.projects--section--img:hover{
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+/*!!!!!!!!!!PROJECT SECTION ENDS HERE!!!!!!!!!!*/
+
+/*!!!!!!!!!!EDUCATION SECTION STARTS HERE!!!!!!!!!!*/
+.education--section{
+    display: flex;
+    padding: 150px 85px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    text-align: left;
+    gap: 64px;
+}
+
+.education--section--heading{
+    color: var(--heading-color);
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 77px;
+}
+
+
+.education--container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 32px;
+    width: 100%;
+}
+
+.education--section--card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 12px;
+    padding: 24px;
+    border: 1.5px solid var(--primary);
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: 0px 5.333px 80px 0 rgba(0, 0, 0, 0.1);
+}
+
+.education--degree{
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--primary)
+}
+
+.education--year{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--black)
+}
+
+.education--institution{
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--black)
+}
+
+.education--description{
+    font-style: italic;
+    font-weight: 500;
+    color: var(--darkblue)
+
+}
+
+/*!!!!!!!!!!EDUCATION SECTION ENDS HERE!!!!!!!!!!*/
+
+/*!!!!!!!!!!SERVICES SECTION STARTS HERE!!!!!!!!!!*/
+
+.services--section{
+    display: flex;
+    flex-direction: column;
+    padding: 80px 60px;
+    gap: 64px;
+    align-items: left;
+    text-align: center;
+}
+
+.services--section--heading{
+    color: var(--heading-color);
+    font-size: 40;
+    font-weight: 700;
+    line-height: 2px;
+    text-align: left;
+    margin-bottom: 100px;
+}
+
+
+.services--section--container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.services--section--card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+}
+
+.services--section--card:hover{
+    border-bottom: 4px solid var(--primary);
+}
+
+.services--section--icon img{
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.services--section--title{
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--heading-color);
+}
+
+.services--section--description{
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--darkblue);
+}
+
+/*!!!!!!!!!!SERVICES SECTION ENDS HERE!!!!!!!!!!*/
+
+
+/*!!!!!!!!!!CONTACT SECTION STARTS HERE!!!!!!!!!!*/
+.contact--section{
+    display: flex;
+    padding: 150px 85px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 64px;
+    background-color: var(--bg-shade);
+}
+
+
+.contact--section--heading{
+    color: var(--heading-color);
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 77px;
+}
+
+.contact--sub--title{
+    color: var(--heading-color);
+    font-size: 21px;
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 32px;
+    margin-top: 34px;
+}
+
+.contact--form--container{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, auto);
+    width: 40%;
+    row-gap: 32px;
+}
+
+.contact--container{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 32px;
+    row-gap: 32px;
+}
+
+.contact--label{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10.6px;
+    flex: 1 0 0;
+    width: 100%
+}
+
+.contact--input{
+    display: flex;
+    font-family: "Roboto";
+    padding: 16px;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 8px;
+    border: 1.333px solid var(--primary);
+    background: var(--white);
+}
+
+/*this was taken from the web*/
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Some browsers will not display the caret when using calc, so we put the fallback first */
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.5303 21.2052C16.2374 21.4981 15.7626 21.4981 15.4697 21.2052L7.82318 13.5587C7.53029 13.2658 7.53029 12.791 7.82318 12.4981L8.17674 12.1445C8.46963 11.8516 8.9445 11.8516 9.2374 12.1445L16 18.9071L22.7626 12.1445C23.0555 11.8516 23.5303 11.8516 23.8232 12.1445L24.1768 12.4981C24.4697 12.791 24.4697 13.2658 24.1768 13.5587L16.5303 21.2052Z" fill="%23033333"/></svg>')
+    white no-repeat 98.5% !important; /* !important used for overriding all other customisations */
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.5303 21.2052C16.2374 21.4981 15.7626 21.4981 15.4697 21.2052L7.82318 13.5587C7.53029 13.2658 7.53029 12.791 7.82318 12.4981L8.17674 12.1445C8.46963 11.8516 8.9445 11.8516 9.2374 12.1445L16 18.9071L22.7626 12.1445C23.0555 11.8516 23.5303 11.8516 23.8232 12.1445L24.1768 12.4981C24.4697 12.791 24.4697 13.2658 24.1768 13.5587L16.5303 21.2052Z" fill="%23033333"/></svg>')
+    white no-repeat calc(100% - 20px); /* Better placement regardless of input width */
+}
+/*For IE*/
+select::-ms-expand {
+  display: none;
+}
+
+.checkbox--label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10.6px;
+    flex: 1 0 0;
+    justify-content: flex-start;
+}
+
+input[type="checkbox"]{
+    width: 21px;
+    height: 21px;
+    border: 0.15em solid var(--heading-color);
+    border-radius: 0.15em;
+    transform: none;
+}
+/*!!!!!!!!!!CONTACT SECTION ENDS HERE!!!!!!!!!!*/
+
+
+
