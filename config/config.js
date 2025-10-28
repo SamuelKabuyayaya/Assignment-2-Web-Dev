@@ -1,8 +1,8 @@
  const config = {
  env: process.env.NODE_ENV || 'development', 
  port: process.env.PORT || 5000,
- jwtSecret: process.env.JWT_SECRET || "mySecretKey13456", 
- mongoUri: process.env.MONGODB_URI ||"mongodb+srv://blessing:sQdJrBwpfZhj4Ulp@cluster0.cfr2y1i.mongodb.net/Skeleton?retryWrites=true&w=majority&appName=Cluster0"||
+ jwtSecret: process.env.JWT_SECRET || "I5aeDqp20NEFy21P", 
+ mongoUri: process.env.MONGODB_URI ||"mongodb+srv://kakapuka677_db_user:I5aeDqp20NEFy21P@cluster0.gvbjh9v.mongodb.net/"||
  process.env.MONGO_HOST ||
  'mongodb://' + (process.env.IP || 'localhost') + ':' + 
 (process.env.MONGO_PORT || '27017') +
