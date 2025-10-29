@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const ProjectSchema = new mongoose.Schema({
+const QualificationSchema = new mongoose.Schema({
   
   title:{
     type: String,
@@ -28,7 +28,7 @@ const ProjectSchema = new mongoose.Schema({
     required: "Email is required",
   },
 
-    completion:{
+   completion:{
     type: Date,
     required: "Completion date is required",
   },
@@ -39,11 +39,7 @@ const ProjectSchema = new mongoose.Schema({
     required: "Description is required"
   },
 
-  created: {
-    type: Date,
-    default: Date.now,
-  },
 });
 
-export default mongoose.model("Project", ProjectSchema);
+export default mongoose.model("Qualification", QualificationSchema);
 
