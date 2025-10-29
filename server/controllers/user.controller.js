@@ -1,75 +1,64 @@
 import User from "../models/user.model.js";
-import extend from "lodash/extend.js";
-import errorHandler from "./error.controller.js";
-const create = async (req, res) => {
-  const user = new User(req.body);
+import bcrypt from "bcryptjs";
+
+const userById = async (req, res, next, id) => {
   try {
-    await user.save();
-    return res.status(200).json({
-      message: "Successfully signed up!",
-    });
-  } catch (err) {
-    return res.status(400).json({
-      error: errorHandler.getErrorMessage(err),
-    });
-  }
-};
-const list = async (req, res) => {
-  try {
-    let users = await User.find().select("name email updated created");
-    res.json(users);
-  } catch (err) {
-    return res.status(400).json({
-      error: errorHandler.getErrorMessage(err),
-    });
-  }
-};
-const userByID = async (req, res, next, id) => {
-  try {
-    let user = await User.findById(id);
+    let user = await User.findById(id).select("-hashed_password -salt");
     if (!user)
-      return res.status(400).json({
-        error: "User not found",
-      });
+      return res.status(404).json({error: "User not found"});
     req.profile = user;
     next();
-  } catch (err) {
-    return res.status(400).json({
-      error: "Could not retrieve user",
-    });
+   } catch (err){
+    return res.status(400).json({error: "User not found"});
+   }
+  };
+
+  const list = async (req, res) => {
+    let users = await User.find().select("-hashed_password -salt");
+    res.json(users);
   }
-};
-const read = (req, res) => {
-  req.profile.hashed_password = undefined;
-  req.profile.salt = undefined;
-  return res.json(req.profile);
-};
-const update = async (req, res) => {
-  try {
-    let user = req.profile;
-    user = extend(user, req.body);
-    user.updated = Date.now();
+
+  const create = async (req, res) => {
+    try {
+      const hashed = await bcrypt.hash(req.body.password, 10);
+      const user = new User({
+        name: req.body.name,
+        email: req.body.email,
+        hashed_password:hashed,
+      });
+
     await user.save();
-    user.hashed_password = undefined;
-    user.salt = undefined;
-    res.json(user);
-  } catch (err) {
-    return res.status(400).json({
-      error: errorHandler.getErrorMessage(err),
-    });
-  }
-};
-const remove = async (req, res) => {
-  try {
-    let user = req.profile;
-    let deletedUser = await user.deleteOne();
-    deletedUser.hashed_password = undefined;
-    deletedUser.salt = undefined;
-    res.json(deletedUser);
-  } catch (err) {
-    return res.status(400).json({
-      error: errorHandler.getErrorMessage(err),
-    });
-  }
-};
-export default { create, userByID, read, list, remove, update };
+    res.status(201).json({message: "User was created!"});
+    }catch (err){
+      res.status(400).json({error: err.message});
+    }
+  };
+
+  const read = (req, res) => {
+    res.json(req.profile);
+  };
+
+  const update = async (req, res) => {
+    try {
+      let user = req.profile;
+      user.name = req.body.name || user.name;
+      user.updated = Date.now();
+
+      await user.save();
+      res.json({message: "User updated!"});
+    } catch (err){
+            res.status(400).json({error: err.message});
+    }
+  };
+
+  const remove = async (req, res) => {
+    try {
+      await User.findByIdAndDelete(req.profile._id);
+      res.json({message: "User deleted!"});
+    }catch (err){
+           res.status(400).json({error: err.message});
+    }
+  };
+
+
+  export default {list, create, read, update, remove, userById}
