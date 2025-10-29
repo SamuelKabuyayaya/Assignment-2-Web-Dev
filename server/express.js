@@ -7,6 +7,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 
 import userRoutes from "./routes/user.routes.js";
+import contactRoutes from "./routes/contact.routes.js";
 
 
 const app = express();
@@ -22,6 +23,7 @@ app.use(morgan("dev"));
 
 
 app.use("/api/users", userRoutes);
+app.use("/api/contacts", contactRoutes);
 
 
 app.get("/", (req,res) => {
