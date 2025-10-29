@@ -38,7 +38,7 @@ const contactById = async (req, res, next, id) => {
       contact.lastname = req.body.lastname || contact.lastname;
       contact.email = req.body.email || contact.email;
 
-      await user.save();
+      await contact.save();
       res.json({message: "Contact updated!"});
     } catch (err){
             res.status(400).json({error: err.message});
