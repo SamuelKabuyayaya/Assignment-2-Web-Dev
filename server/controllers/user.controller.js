@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs";
 
 const userById = async (req, res, next, id) => {
   try {
-    let user = await User.findById(id).select("-hashed_password -salt");
+    let user = await User.findById(id).select("-password");
     if (!user)
       return res.status(404).json({error: "User not found"});
     req.profile = user;
@@ -14,17 +14,25 @@ const userById = async (req, res, next, id) => {
   };
 
   const list = async (req, res) => {
-    let users = await User.find().select("-hashed_password -salt");
+    let users = await User.find().select("-password");
     res.json(users);
   }
 
   const create = async (req, res) => {
     try {
+
+      if(!req.body.password || req.body.password.length < 6){
+        return res.status(400).json({
+          error: "Password must be at least 6 characters long",
+        });
+      }
+
       const hashed = await bcrypt.hash(req.body.password, 10);
+
       const user = new User({
         name: req.body.name,
         email: req.body.email,
-        hashed_password:hashed,
+        password:hashed,
       });
 
     await user.save();
