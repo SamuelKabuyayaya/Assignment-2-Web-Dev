@@ -38,7 +38,6 @@ const QualificationSchema = new mongoose.Schema({
     trim: true,
     required: "Description is required"
   },
-
 });
 
 export default mongoose.model("Qualification", QualificationSchema);

@@ -19,11 +19,6 @@ const ContactSchema = new mongoose.Schema({
     match: [/.+\@.+\..+/, "Please fill a valid email address"],
     required: "Email is required",
   },
-
-  created: {
-    type: Date,
-    default: Date.now,
-  },
 });
 
 export default mongoose.model("Contact", ContactSchema);

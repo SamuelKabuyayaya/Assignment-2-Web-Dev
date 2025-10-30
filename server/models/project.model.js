@@ -38,11 +38,6 @@ const ProjectSchema = new mongoose.Schema({
     trim: true,
     required: "Description is required"
   },
-
-  created: {
-    type: Date,
-    default: Date.now,
-  },
 });
 
 export default mongoose.model("Project", ProjectSchema);
