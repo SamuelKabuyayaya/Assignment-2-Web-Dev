@@ -5,7 +5,9 @@ const router = express.Router();
 
 router.route("/")
 .get(contactCtrl.list)
-.post(contactCtrl.create);
+.post(contactCtrl.create)
+.delete(contactCtrl.removeAll);
+
 
 router.param("contactId", contactCtrl.contactById);
 

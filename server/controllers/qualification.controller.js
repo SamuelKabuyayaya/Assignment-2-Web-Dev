@@ -58,5 +58,15 @@ const qualificationById = async (req, res, next, id) => {
     }
   };
 
+  const removeAll = async (req, res) => {
+      try {
+        await Qualification.deleteMany({});
+        res.json({message: "All Qualifications deleted!"});
+      }catch (err){
+             res.status(400).json({error: err.message});
+      }
+    };
+  
 
-  export default {list, create, read, update, remove, qualificationById}
+
+  export default {list, create, read, update, remove, removeAll, qualificationById}

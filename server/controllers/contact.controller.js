@@ -54,5 +54,14 @@ const contactById = async (req, res, next, id) => {
     }
   };
 
+   const removeAll = async (req, res) => {
+        try {
+          await Contact.deleteMany({});
+          res.json({message: "All Contacts deleted!"});
+        }catch (err){
+               res.status(400).json({error: err.message});
+        }
+      };
 
-  export default {list, create, read, update, remove, contactById}
+
+  export default {list, create, read, update, remove, removeAll, contactById}

@@ -5,7 +5,8 @@ const router = express.Router();
 
 router.route("/")
 .get(userCtrl.list)
-.post(userCtrl.create);
+.post(userCtrl.create)
+.delete(userCtrl.removeAll);
 
 router.param("userId", userCtrl.userById);
 

@@ -58,5 +58,14 @@ const projectById = async (req, res, next, id) => {
     }
   };
 
+   const removeAll = async (req, res) => {
+        try {
+          await Project.deleteMany({});
+          res.json({message: "All Projects deleted!"});
+        }catch (err){
+               res.status(400).json({error: err.message});
+        }
+      };
 
-  export default {list, create, read, update, remove, projectById}
+
+  export default {list, create, read, update, remove, removeAll, projectById}

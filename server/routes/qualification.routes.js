@@ -5,7 +5,8 @@ const router = express.Router();
 
 router.route("/")
 .get(qualificationCtrl.list)
-.post(qualificationCtrl.create);
+.post(qualificationCtrl.create)
+.delete(qualificationCtrl.removeAll);
 
 router.param("qualificationId", qualificationCtrl.qualificationById);
 

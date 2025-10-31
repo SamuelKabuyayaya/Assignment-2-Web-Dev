@@ -5,7 +5,8 @@ const router = express.Router();
 
 router.route("/")
 .get(projectCtrl.list)
-.post(projectCtrl.create);
+.post(projectCtrl.create)
+.delete(projectCtrl.removeAll);
 
 router.param("projectId", projectCtrl.projectById);
 
