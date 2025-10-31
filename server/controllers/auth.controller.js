@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
-import config from "../config/config.js";
+import config from "../../config/config.js";
 import bcrypt from "bcryptjs";
 
 const signin = async (req, res) => {
@@ -22,6 +22,7 @@ const signin = async (req, res) => {
         user: {_id: user._id, name: user.name, email: user.email},
     });
     } catch (err){
+    console.error(err);
     res.status(401).json({error: "Could not sign in"});
    }
 };
